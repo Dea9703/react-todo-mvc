@@ -1,4 +1,4 @@
-import { Input, Table, Space, Popconfirm } from 'antd'
+import { Input, Table, Space, Popconfirm, Button } from 'antd'
 import axios from 'axios'
 import React from 'react'
 import './App.css'
@@ -28,11 +28,11 @@ class App extends React.Component {
         title: '操作',
         dataIndex: 'do',
         key: 'do',
-        render: (text, record) => (
+        render: (_, record) => (
           <Space size="middle">
             <Popconfirm title="确定要删除吗?"
               onConfirm={() => this.handleDelete(record.id)}>
-              <a href="#">删除</a>
+              <Button type='primary' size='small'>删除</Button>
             </Popconfirm>
           </Space>
         ),
